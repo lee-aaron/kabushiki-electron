@@ -1241,6 +1241,11 @@ ansi-cyan@^0.1.1:
   dependencies:
     ansi-wrap "0.1.0"
 
+ansi-escapes@^1.0.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
+  integrity sha1-06ioOzGapneTZisT52HHkRQiMG4=
+
 ansi-escapes@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-2.0.0.tgz#5bae52be424878dd9783e8910e3fc2922e83c81b"
@@ -2436,6 +2441,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
+bootstrap@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
+  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
+
 bowser@1.6.0:
   version "1.6.0"
   resolved "http://registry.npmjs.org/bowser/-/bowser-1.6.0.tgz#37fc387b616cb6aef370dab4d6bd402b74c5c54d"
@@ -2773,6 +2783,11 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
+camelcase@^5.0.0:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
+  integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
+
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -2964,6 +2979,11 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 cli-boxes@^1.0.0:
   version "1.0.0"
@@ -6774,6 +6794,11 @@ jest@^23.6.0:
     import-local "^1.0.0"
     jest-cli "^23.6.0"
 
+jquery@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.0.tgz#8de513fa0fa4b2c7d2e48a530e26f0596936efdf"
+  integrity sha512-ggRCXln9zEqv6OqAGXFEcshF5dSBvCkzj6Gm2gzuR5fWawaX8t7cxKVkkygKODrDAzKdoYw3l/e3pm3vlT4IbQ==
+
 js-base64@^2.1.8:
   version "2.4.9"
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-2.4.9.tgz#748911fb04f48a60c4771b375cac45a80df11c03"
@@ -7069,7 +7094,7 @@ listr-update-renderer@^0.4.0:
     figures "^1.7.0"
     indent-string "^3.0.0"
     log-symbols "^1.0.2"
-    log-update "^2.3.0"
+    log-update "^1.0.2"
     strip-ansi "^3.0.1"
 
 listr-verbose-renderer@^0.4.0:
@@ -7225,6 +7250,14 @@ log-update-async-hook@^2.0.2:
     async-exit-hook "^1.1.2"
     onetime "^2.0.1"
     wrap-ansi "^2.1.0"
+
+log-update@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/log-update/-/log-update-1.0.2.tgz#19929f64c4093d2d2e7075a1dad8af59c296b8d1"
+  integrity sha1-GZKfZMQJPS0ucHWh2tivWcKWuNE=
+  dependencies:
+    ansi-escapes "^1.0.0"
+    cli-cursor "^1.0.2"
 
 log-update@^2.3.0:
   version "2.3.0"
@@ -8558,6 +8591,11 @@ pngjs@^3.3.1:
   version "3.3.3"
   resolved "https://registry.npmjs.org/pngjs/-/pngjs-3.3.3.tgz#85173703bde3edac8998757b96e5821d0966a21b"
 
+popper.js@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
+  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
+
 portfinder@^1.0.9:
   version "1.0.19"
   resolved "https://registry.npmjs.org/portfinder/-/portfinder-1.0.19.tgz#07e87914a55242dcda5b833d42f018d6875b595f"
@@ -8955,6 +8993,16 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
+primeicons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-1.0.0.tgz#90061f168ef6227f21f0a7db8204ffa85cd27aec"
+  integrity sha512-p/hzIjUVccW4eJPhuORHI3AUkDpqfvCQVrjxbFEejnTEdWY4C8fomVfjiaA9jCu83fSQnBHuRIGB96iAR8R6uA==
+
+primereact@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/primereact/-/primereact-3.1.2.tgz#d5866515268618039f1a960734195073d8ac1269"
+  integrity sha512-QpCtSwPHsskkYSVNBx/uSs0gHbOAKVlm2UZacU8IUMMkVpCEhuwAIb09OsgYxotzwgzwVD9MEVS03kE5tamy+g==
+
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
   resolved "https://registry.npmjs.org/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -9195,6 +9243,13 @@ react-hot-loader@^4.3.12:
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
+
+react-icons@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.6.1.tgz#794da15fff7788907e0390237e13a50692bffd00"
+  integrity sha512-TpdkxqS2zohHjMjO58AfMB3aW4HE6Hn2FWX2HhIbfCptHpPzW3fIrXRBSOhkzsm59CZUr7M5v2F/j3eBwws95Q==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-is@^16.3.2, react-is@^16.6.0:
   version "16.6.0"
