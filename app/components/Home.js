@@ -10,16 +10,11 @@ type Props = {};
 export default class Home extends Component<Props> {
   props: Props;
 
-  closeWindow() {
-    const window = remote.getCurrentWindow();
-    window.close();
-  }
-
   render() {
     return (
       <div className={styles.container} data-tid="container">
         <h1>Welcome to Kabushiki Web!</h1>
-        <button id="close-btn" onClick={this.closeWindow} >X</button>
+        <Link to={routes.COUNTER}>to Counter</Link>
       </div>
     );
   }
