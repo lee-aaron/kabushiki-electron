@@ -14,6 +14,7 @@ export default class Error extends Component<Props> {
   render() {
     return (
       <div>
+        Error
       </div>
     );
   }

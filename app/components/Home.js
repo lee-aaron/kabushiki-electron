@@ -14,7 +14,7 @@ export default class Home extends Component<Props> {
     return (
       <div className={styles.container} data-tid="container">
         <h1>Welcome to Kabushiki Web!</h1>
-        <Link to={routes.COUNTER}>to Counter</Link>
+        <Link to={routes.MAIN}>Click here to get started!</Link>
       </div>
     );
   }
