@@ -6,6 +6,6 @@ import mainReducer from './mainReducer';
 export default function createRootReducer(history: History) {
   return combineReducers({
     router: connectRouter(history),
-    mainReducer
+    main: mainReducer
   });
 }
