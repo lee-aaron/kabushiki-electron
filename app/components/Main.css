@@ -10,3 +10,16 @@
   width: 50vw;
   height: 50vh;
 }
+
+.account {
+  float: left;
+  margin-right: 5px;
+  margin: 10px;
+}
+
+.parent {
+  float: left;
+  margin-right: 10px;
+  width: 50vw;
+  height: 50vh;
+}

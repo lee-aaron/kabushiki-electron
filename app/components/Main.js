@@ -13,7 +13,8 @@ type Props = {
 
 type State = {
   code: string,
-  refresh_token: string
+  refresh_token: string,
+  data: Array<any>
 };
 
 export default class Main extends Component<Props, State> {
@@ -25,7 +26,8 @@ export default class Main extends Component<Props, State> {
     super(props);
     this.state = {
       code: '',
-      refresh_token: ''
+      refresh_token: '',
+      data: []
     };
     props.getAuth();
     this.webView = React.createRef();
@@ -36,10 +38,11 @@ export default class Main extends Component<Props, State> {
     this.getTokens = this.getTokens.bind(this);
     this.getStocks = this.getStocks.bind(this);
     this.handleCallback = this.handleCallback.bind(this);
+    this.renderAccounts = this.renderAccounts.bind(this);
   }
 
   componentDidMount() {
-    console.log("Refreshed");
+    console.log('Refreshed');
     this.handleWebView();
   }
 
@@ -59,6 +62,7 @@ export default class Main extends Component<Props, State> {
           ''
         );
         this.setState({ code: this.decodeURLRecursively(parsed) });
+        this.webView.current.remove();
       }
     });
   };
@@ -97,29 +101,36 @@ export default class Main extends Component<Props, State> {
       let authReply = JSON.parse(body);
 
       //the line below is for convenience to test that it's working after authenticating
-      console.log(authReply);
+      //console.log(authReply);
       this.setState({
         code: authReply.access_token,
         refresh_token: authReply.refresh_token
       });
+
+      this.getStocks();
     }
   };
 
   getStocks = () => {
-    console.log(this.state.code);
     let headers = {
-      'Authorization': 'Bearer ' + this.state.code
-    }
+      Authorization: 'Bearer ' + this.state.code
+    };
     let params = {
-      'fields': 'positions'
-    }
-    axios.get('https://api.tdameritrade.com/v1/accounts', {headers: headers, params: params})
+      fields: 'positions'
+    };
+    axios
+      .get('https://api.tdameritrade.com/v1/accounts', {
+        headers: headers,
+        params: params
+      })
       .then(res => {
-        console.log(res);
+        this.setState({
+          data: res.data
+        });
       })
       .catch(err => {
         console.error(err);
-      })
+      });
   };
 
   onSubmit = (e: SyntheticInputEvent<*>) => {
@@ -130,6 +141,47 @@ export default class Main extends Component<Props, State> {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  renderAccounts = () => {
+    if (this.state.data.length === 0) {
+      return null;
+    }
+
+    console.log(this.state.data);
+
+    return (
+      <>
+        {this.state.data.map(account => (
+          <div className={styles.account} key={account.securitiesAccount.accountId}>
+            <div>{account.securitiesAccount.accountId}</div>
+            <div>
+              Total Value: {account.securitiesAccount.initialBalances.accountValue}
+            </div>
+            <table className={styles.position}>
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Long Quantity</th>
+                  <th>Market Value</th>
+                  <th>Current Gain ($)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {account.securitiesAccount.positions.map(position => (
+                  <tr key={position.instrument.symbol}>
+                    <td>{position.instrument.symbol}</td>
+                    <td>{position.settledLongQuantity}</td>
+                    <td>{position.marketValue}</td>
+                    <td>{position.currentDayProfitLoss}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </>
+    );
+  };
+
   render() {
     const { auth_url } = this.props;
     return (
@@ -137,6 +189,7 @@ export default class Main extends Component<Props, State> {
         <h1>Main</h1>
         <webview src={auth_url} ref={this.webView} />
         {this.state.code != '' ? this.getTokens() : null}
+        {this.state.data.length === 0 ? null : <div id="parent" className={styles.parent}>{this.renderAccounts()}</div>}
       </div>
     );
   }
